@@ -121,7 +121,7 @@ else if (props.messages.errMess) {
 else {
   return (
     <SwipeableList>
-      <List className={classes.root}>
+      <List className={classes.root} style={{padding:'5px',paddingTop:'0px', paddingBottom:'0px'}}>
         {messages}
       </List>
     </SwipeableList>
@@ -158,7 +158,7 @@ const MessagesComponent = (props) => {
       </Grid>
       <Grid item xs={12} sm={8}>
       
-      <Typography variant="h5" style={{ width: '70vw', display:'inline' }} gutterBottom className="topic">Messages</Typography> 
+      <Typography variant="h5" style={{ width: '70vw', display:'inline',marginLeft:'5px' }} gutterBottom className="topic">Messages</Typography> 
       <Typography variant ='h6' style={{display:'inline', marginLeft:'5px', fontSize:'13px'}} className="topic">(Swipe Right To Like Message)</Typography>
       
 

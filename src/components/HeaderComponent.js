@@ -8,7 +8,6 @@ import {AppBar, Toolbar, IconButton, Typography, makeStyles, List,
     import { MenuIcon, Home } from '@material-ui/icons';
 
     
-       
 
     const useStyles = makeStyles(() => ({
         typographyStyles: {
@@ -26,6 +25,9 @@ import {AppBar, Toolbar, IconButton, Typography, makeStyles, List,
         navbarDisplayFlex: {
             display: 'flex',
             justifyContent: 'space-between'
+        },
+        name: {
+            color:'red'
         }
     }));
     
@@ -34,7 +36,7 @@ const HeaderComponent = () => {
     const classes = useStyles();
     return (
      <>
-     <AppBar position="static">
+     <AppBar position="static" style={{margin:0}}>
                 <Toolbar id="back-to-top-anchor">
                     <Container className={classes.navbarDisplayFlex}>
                     <NavLink className={classes.linkText} to="/home">
@@ -47,27 +49,28 @@ const HeaderComponent = () => {
                         </Typography>
 
                         <Hidden smDown>
-
-                            <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
+                            
+                        <List component="nav" aria-labelledby="main navigation" className={classes.navDisplayFlex}>
                                <NavLink className={classes.linkText} to="/home"> 
                                     <ListItem button>
-                                        <ListItemText primary="Home" />
+                            <ListItemText className={classes.name} primary={<Typography>Home</Typography>} />
                                     </ListItem>
                                 </NavLink>
 
                                 <NavLink className={classes.linkText} to="/gallery"> 
                                     <ListItem button>
-                                        <ListItemText primary="Gallery" />
+                                        <ListItemText primary={<Typography>Gallery</Typography>} />
                                     </ListItem>
                                 </NavLink>
 
                                 <NavLink className={classes.linkText} to="/messages"> 
                                     <ListItem button>
-                                        <ListItemText primary="Messages" />
+                                        <ListItemText primary={<Typography>Messages</Typography>} />
                                     </ListItem>
                                 </NavLink>
 
                             </List>
+                            
                         </Hidden>
                         <Hidden mdUp>
                             <SideDrawer />

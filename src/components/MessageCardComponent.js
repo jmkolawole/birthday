@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 345,
     backgroundColor:'white'
   },
+  name: {
+   color:'white'
+  },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
@@ -75,7 +78,7 @@ function RenderMessage({ message, postLike, id }) {
         </Typography>
       </CardContent>
 
-      <CardHeader
+      <CardHeader className={classes.name}
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
             {name.charAt(0).toUpperCase()}
@@ -147,6 +150,7 @@ const MessageCardComponent = (props) => {
 
   return (
     <>
+    <div style={{padding:'5px'}}>
     <MessageList messages={props.messages} postLike={props.postLike} />
     
     <Grid item container justify='center'>
@@ -174,6 +178,7 @@ const MessageCardComponent = (props) => {
       </Grid>
 
     </Grid>
+   </div> 
     </>
   );
 

@@ -39,18 +39,18 @@ const SideDrawer = () => {
         >
             <List component="nav">
                 <NavLink className={classes.linkText} to="/home">
-                    <ListItem button>
-                        <ListItemText primary="Home" />
+                    <ListItem button style={{color:'red'}}>
+                        <ListItemText className="drawList" primary="Home" />
                     </ListItem>
                 </NavLink>
                 <NavLink className={classes.linkText} to="/gallery">
                     <ListItem button>
-                        <ListItemText primary="Gallery" />
+                        <ListItemText className="drawList" primary="Gallery" />
                     </ListItem>
                 </NavLink>
                 <NavLink className={classes.linkText} to="/messages">
                     <ListItem button>
-                        <ListItemText primary="Messages" />
+                        <ListItemText className="drawList" primary="Messages" />
                     </ListItem>
                 </NavLink>
             </List>

@@ -44,7 +44,7 @@ class MainComponent extends Component {
             <>
              <Header/>
 
-             <Grid container direction="column">
+             <Grid container direction="column" className="body">
              <Switch> 
              <Route path="/home" component={() => <HomeComponent postLike ={this.props.postLike}
              postMessage = {this.props.postMessage} messages = {this.props.messages} fetchMessages = {this.props.fetchMessages}/>}  />
@@ -56,10 +56,8 @@ class MainComponent extends Component {
               <Redirect to="/home" />
             </Switch>
 
-
-
-             <Footer/>
              </Grid>
+             <Footer/>
             </>
         );
     }

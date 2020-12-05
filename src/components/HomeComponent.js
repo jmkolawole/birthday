@@ -73,7 +73,7 @@ const HomeComponent = (props) => {
       ];
       const randomNumber = Math.floor(Math.random() * images.length);
       state.info = images[randomNumber];
-    props.postMessage(state.name, state.message, state.anonymous, state.info);
+    //props.postMessage(state.name, state.message, state.anonymous, state.info);
     //props.fetchMessages(1);
     e.preventDefault();
     setOpen(false);
@@ -165,14 +165,15 @@ const HomeComponent = (props) => {
             <form onSubmit={handleSubmit}>
               <Paper style={{ padding: 16, width: '50vw' }}>
                 <Grid container alignItems="flex-start" spacing={2}>
-                  <Typography variant="h5" align="center" style={{ width: '70vw' }} gutterBottom>Wish Tomilola Happy Birthday</Typography>
+                  <Typography variant="h5" align="center" style={{ width: '70vw' }} gutterBottom>Wish Tomilola A Happy Birthday</Typography>
                   <Grid item xs={12}>
-                    <TextField id="outlined-basic" label="Name" name="name" value={state.name} onChange={handleChange} defaultValue="Name" variant="outlined" style={{ width: '50vw' }} />
+                    <TextField id="outlined-basic" label="Name" name="name" value={state.name} onChange={handleChange} 
+                    defaultValue="Name" variant="outlined" style={{ width: '50vw' }} />
                   </Grid>
                   <Grid item xs={12}>
                     <FormControlLabel
                       control={<Checkbox name="anonymous" />}
-                      label="Remain Anonymous"
+                      label={<Typography style={{color:'black'}}>Remain Anonymous</Typography>}
                       checked={state.anonymmous}
                       onChange={handleChange}
                     />
@@ -232,7 +233,7 @@ const HomeComponent = (props) => {
       <Grid item xs={0} sm={2}></Grid>
 
       <Grid item xs={12} sm={8} style={{ float: 'right' }}>
-        <Typography variant="h5" style={{ width: '70vw' }} gutterBottom className="topic">Hot on IG</Typography>
+        <Typography variant="h5" style={{ width: '70vw',marginLeft:'5px' }} gutterBottom className="topic">Hot on IG</Typography>
       </Grid>
       <Grid item xs={0} sm={2}></Grid>
     </Grid>
