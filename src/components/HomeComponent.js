@@ -13,7 +13,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
 
-import Feed from "react-instagram-authless-feed"
+//import Feed from "react-instagram-authless-feed"
 
 
 
@@ -230,7 +230,7 @@ const HomeComponent = (props) => {
       <Grid item xs={0} sm={2}></Grid>
 
       <Grid item xs={12} sm={8}>
-      {<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />}
+      {/*<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />*/}
       </Grid>
 
       <Grid item xs={0} sm={2}></Grid>
