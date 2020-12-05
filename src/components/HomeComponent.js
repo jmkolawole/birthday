@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import MessageCardComponent from './MessageCardComponent';
-import { Control, LocalForm } from 'react-redux-form';
 
-import { Grid, Typography, makeStyles, TextField, Avatar, CardHeader, Paper, Button, Card, 
-  FormLabel, FormControlLabel, Link, Checkbox, Badge , IconButton, CardContent, CardMedia} from '@material-ui/core';
 
-import CheckBoxIcon from '@material-ui/icons/CheckBox';
-import ThumbUp from '@material-ui/icons/ThumbUp';
+import { Grid, Typography, TextField,Paper, Button, FormControlLabel, Checkbox} from '@material-ui/core';
+
+
 
 import ImageGallery from 'react-image-gallery';
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -17,23 +15,15 @@ import { Modal } from "react-responsive-modal";
 
 import Feed from "react-instagram-authless-feed"
 
-import Icon from '@material-ui/core/Icon';
 
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    '& > *': {
-      margin: theme.spacing(1),
-      width: '25ch',
-    },
-  },
-}));
+
+
 
 
 
 
 const HomeComponent = (props) => {
-  const classes = useStyles();
   const [open, setOpen] = useState();
   const [state, setState] = useState({
     name: "",
@@ -115,8 +105,6 @@ const HomeComponent = (props) => {
   ]
 
 
-
-  const name = '' ? '' : "Anonymous";
 
   return (
     <>
@@ -242,7 +230,7 @@ const HomeComponent = (props) => {
       <Grid item xs={0} sm={2}></Grid>
 
       <Grid item xs={12} sm={8}>
-      {/*<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />*/}
+      {<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />}
       </Grid>
 
       <Grid item xs={0} sm={2}></Grid>

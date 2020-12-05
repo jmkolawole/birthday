@@ -1,6 +1,6 @@
 import React from 'react';
 import Gallery from 'react-grid-gallery';
-import { Grid, Typography, Button } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 const GalleryComponent = () => {
 

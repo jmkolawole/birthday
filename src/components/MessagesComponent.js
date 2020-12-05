@@ -78,7 +78,7 @@ function RenderMessage({ message, postLike }) {
         />
       </ListItem>
     </SwipeableListItem>
-    {message.id % 10 != 0 && <Divider/>}
+    {message.id % 10 !== 0 && <Divider/>}
 
     
     </>
@@ -138,17 +138,8 @@ const MessagesComponent = (props) => {
 }
 
    
-  console.log(props);
-  const classes = useStyles();
-  const swipeContent = {
-    backgroundColor: 'red',
-    color: 'white',
-    flex: 1,
-    height: '100%',
-    display: 'flex',
-    flexFlow: 'column',
-    justifyContent: 'center'
-  }
+  //console.log(props);
+
   return (
     <>
     <Grid item container>

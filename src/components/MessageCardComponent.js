@@ -2,19 +2,16 @@ import React, { useState } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import {
-  Card, CardHeader, CardMedia, CardContent, CardActions, Collapse,
+  Card, CardHeader, CardMedia, CardContent,
   Avatar, IconButton, Typography, Grid, Badge
 } from '@material-ui/core';
-import { red, green } from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
 import LoadingComponent from './LoadingComponent';
 
 import Pagination from 'rc-pagination';
 
 //Icons
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
 //Icons
@@ -109,7 +106,7 @@ function RenderMessage({ message, postLike, id }) {
 
 
 function MessageList(props) {
-  const classes = useStyles();
+  
 
   //{console.log(props)}
 
@@ -152,7 +149,7 @@ const MessageCardComponent = (props) => {
     //console.log(props);
   }
 
-  const classes = useStyles();
+  
 
   return (
     <>

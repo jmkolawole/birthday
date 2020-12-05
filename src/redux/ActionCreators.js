@@ -8,7 +8,7 @@ export const fetchMessages = (page) => (dispatch) => {
     
     dispatch(messagesLoading());
     let url; 
-    if(page == ""){
+    if(page === ""){
      url = 'https://tomilola.herokuapp.com/api/messages';
     }else{
      url = 'https://tomilola.herokuapp.com/api/messages?page='+page;
@@ -93,7 +93,7 @@ export const postMessage = (name, message, anonymous,info) => (dispatch) => {
    .then(response => dispatch(addMessage(response)))
     .catch(error => { console.log('Post messages ', error.message);
         alert('Your message could not be posted\nError: '+ error.message); })
-    alert('message posted');
+    
     
 }
 

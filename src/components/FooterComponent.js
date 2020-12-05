@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, ListItem, Divider, ListItemText, Grid, ListItemAvatar, Avatar, Typography, Badge, makeStyles, IconButton } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 const FooterComponent = () => {
   return(
     <div className="footer">
