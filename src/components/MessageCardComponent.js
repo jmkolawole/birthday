@@ -27,7 +27,8 @@ import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
-    backgroundColor:'white'
+    backgroundColor:'white',
+    margin: '5px'
   },
   name: {
    color:'white'
@@ -60,8 +61,13 @@ function handleButton(id, postLike) {
 function RenderMessage({ message, postLike, id }) {
   const classes = useStyles();
   const [count, setCount] = useState(message.votes);
-  const name = message.name ? message.name : "Anonymous";
-  
+  let name = "";
+  if(message.anonymous === false || message.name === ''){
+      name = message.name;
+  }else{
+      name = "Anonymous";
+  }
+   
 
   return (
 
@@ -150,7 +156,7 @@ const MessageCardComponent = (props) => {
 
   return (
     <>
-    <div style={{padding:'5px'}}>
+    
     <MessageList messages={props.messages} postLike={props.postLike} />
     
     <Grid item container justify='center'>
@@ -178,7 +184,7 @@ const MessageCardComponent = (props) => {
       </Grid>
 
     </Grid>
-   </div> 
+    
     </>
   );
 

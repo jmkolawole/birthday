@@ -73,7 +73,7 @@ const HomeComponent = (props) => {
       ];
       const randomNumber = Math.floor(Math.random() * images.length);
       state.info = images[randomNumber];
-    //props.postMessage(state.name, state.message, state.anonymous, state.info);
+    props.postMessage(state.name, state.message, state.anonymous, state.info);
     //props.fetchMessages(1);
     e.preventDefault();
     setOpen(false);
@@ -242,7 +242,7 @@ const HomeComponent = (props) => {
       <Grid item xs={0} sm={2}></Grid>
 
       <Grid item xs={12} sm={8}>
-        {<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />}
+      {/*<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />*/}
       </Grid>
 
       <Grid item xs={0} sm={2}></Grid>
