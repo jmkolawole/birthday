@@ -1,3 +1,4 @@
+//Actioncreators
 import * as ActionTypes from './ActionTypes';
 import { baseUrl } from '../shared/baseUrl';
 
@@ -34,19 +35,63 @@ export const fetchMessages = (page) => (dispatch) => {
     .catch(error => dispatch(messagesFailed(error.message)));
 }
 
+export const fetchSingle = () => (dispatch) => {
+    
+    dispatch(singleLoading());
+   
+    return fetch('https://tomilola.herokuapp.com/api/owner')
+    .then(response => {
+        if (response.ok) {
+            return response;
+        } else {
+            
+            var error = new Error('Error ' + response.status + ': ' + response.statusText);
+            error.response = response;
+            throw error;
+        }
+        },
+        error => {
+            var errmess = new Error(error.message);
+            throw errmess;
+        })
+    .then(response => response.json())
+    .then(messages => dispatch(addSingle(messages)))
+    .catch(error => dispatch(singleFailed(error.message)));
+}
+
+
 export const messagesLoading = () => ({
     type: ActionTypes.MESSAGES_LOADING
 });
+
+export const singleLoading = () => ({
+    type: ActionTypes.SINGLE_LOADING
+});
+
 
 export const messagesFailed = (errmess) => ({
     type: ActionTypes.MESSAGES_FAILED,
     payload: errmess
 });
 
+export const singleFailed = (errmess) => ({
+    type: ActionTypes.SINGLE_FAILED,
+    payload: errmess
+});
+
+
 export const addMessages = (messages) => ({
     type: ActionTypes.ADD_MESSAGES,
     payload: messages
 });
+
+export const addSingle = (messages) => ({
+    type: ActionTypes.ADD_SINGLE,
+    payload: messages
+});
+
+
+
 
 
 //For posting message
@@ -135,3 +180,6 @@ export const addLikes = (likes) => ({
     type: ActionTypes.ADD_LIKES,
     payload: likes
 });
+
+
+

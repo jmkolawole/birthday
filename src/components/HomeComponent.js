@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MessageCardComponent from './MessageCardComponent';
+import SingleComponent from './SingleComponent';
 
 
 import { Grid, Typography, TextField,Paper, Button, FormControlLabel, Checkbox} from '@material-ui/core';
@@ -24,6 +25,7 @@ import Feed from "react-instagram-authless-feed"
 
 
 const HomeComponent = (props) => {
+  console.log(props.single);
   const [open, setOpen] = useState();
   const [state, setState] = useState({
     name: "",
@@ -209,6 +211,7 @@ const HomeComponent = (props) => {
           </Modal>
 
           
+          <SingleComponent single={props.single} postLike={props.postLike}/>
           <MessageCardComponent messages={props.messages} postLike={props.postLike} fetchMessages={props.fetchMessages} />
 
         </Grid>

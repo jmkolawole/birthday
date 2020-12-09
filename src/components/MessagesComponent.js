@@ -3,6 +3,7 @@ import { SwipeableList, SwipeableListItem } from '@sandstreamdev/react-swipeable
 import '@sandstreamdev/react-swipeable-list/dist/styles.css';
 import LoadingComponent from './LoadingComponent'
 import Pagination from 'rc-pagination'; 
+import SingleMessageComponent from './singleMessageComponent';
 
 import ThumbUp from '@material-ui/icons/ThumbUp';
 
@@ -12,9 +13,10 @@ import ArrowBackwardIcon from '@material-ui/icons/ArrowBack';
 import ArrowBackIos from '@material-ui/icons/ArrowBackIos'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 
-
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 
 import { List, ListItem, Divider, ListItemText, Grid, ListItemAvatar, Avatar, Typography, Badge, makeStyles, IconButton } from '@material-ui/core';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,16 +31,21 @@ const useStyles = makeStyles((theme) => ({
 
 function handleSwipe(id, postLike){
   postLike(id);
-  
 }
-
-
 
 
 function RenderMessage({ message, postLike }) {
   const classes = useStyles();
   const [count, setCount] = useState(message.votes);
   const name =  message.name  ? message.name : "Anonymous";
+
+  let verified = "";
+  if(message.id === 1){
+    verified = <VerifiedUserIcon style={{paddingTop:'5px',color:'blue',position:'relative',top:'4px'}}/>
+  }else{
+    verified = "";
+  }
+  
   //console.log(message);
   return (
     <>
@@ -53,7 +60,7 @@ function RenderMessage({ message, postLike }) {
           <Avatar alt={name} src="/static/images/avatar/2.jpg" />
         </ListItemAvatar>
         <ListItemText className="message-list"
-          primary={name}
+          primary={<Typography><Typography style={{display:'inline', color:'navy'}}>{message.name}</Typography><Typography style={{display:'inline'}}>{verified}</Typography></Typography>}
 
           secondary={
             <React.Fragment>
@@ -152,6 +159,7 @@ const MessagesComponent = (props) => {
       <Typography variant="h5" style={{ width: '70vw', display:'inline',marginLeft:'5px' }} gutterBottom className="topic">Messages</Typography> 
       <Typography variant ='h6' style={{display:'inline', marginLeft:'5px', fontSize:'13px'}} className="topic">(Swipe Right To Like Message)</Typography>
       
+        <SingleMessageComponent single={props.single} postLike={props.postLike}/>
 
         <MessageList messages={props.messages} postLike={props.postLike}/>
     {/*<div className={classes.root}>
