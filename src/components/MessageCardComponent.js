@@ -10,10 +10,11 @@ import LoadingComponent from './LoadingComponent';
 
 import Pagination from 'rc-pagination';
 
+
 //Icons
 
 import ThumbUp from '@material-ui/icons/ThumbUp';
-
+import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 //Icons
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import ArrowBackwardIcon from '@material-ui/icons/ArrowBack';
@@ -64,6 +65,14 @@ function RenderMessage({ message, postLike, id }) {
   }else{
       name = "Anonymous";
   }
+
+  //let verified = <VerifiedUserIcon/>
+  let verified = "";
+  if(message.id === 1){
+    verified = <VerifiedUserIcon style={{paddingTop:'5px',color:'blue',position:'relative',top:'4px'}}/>
+  }else{
+    verified = "";
+  }
    
 
   return (
@@ -78,6 +87,7 @@ function RenderMessage({ message, postLike, id }) {
       <CardContent>
         <Typography variant="body2" color="textSecondary" component="p">
           {message.message}
+          
         </Typography>
       </CardContent>
 
@@ -96,7 +106,7 @@ function RenderMessage({ message, postLike, id }) {
           </>
 
         }
-        title={name}
+        title={<Typography><Typography style={{color:'black',display:'inline'}}>{name}</Typography>{verified}</Typography>}
         subheader={new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit', hour:'numeric',minute:'numeric'})
         .format(new Date(Date.parse(message.created_at)))}
       />

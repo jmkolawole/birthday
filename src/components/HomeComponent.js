@@ -13,7 +13,7 @@ import "react-responsive-modal/styles.css";
 import { Modal } from "react-responsive-modal";
 
 
-//import Feed from "react-instagram-authless-feed"
+import Feed from "react-instagram-authless-feed"
 
 
 
@@ -54,9 +54,6 @@ const HomeComponent = (props) => {
     setOpen(false);
   };
 
-  
-
-
   const handleSubmit = (e) => {
     const images = [
       'a.jpg','b.jpg','c.jpg','d.jpg','e.jpg','f.jpg','g.jpg','h.jpg','i.jpg','j.jpg'
@@ -64,10 +61,14 @@ const HomeComponent = (props) => {
       const randomNumber = Math.floor(Math.random() * images.length);
       state.info = images[randomNumber];
     props.postMessage(state.name, state.message, state.anonymous, state.info);
-    //props.fetchMessages(1);
+    
     e.preventDefault();
     setOpen(false);
     
+    
+  }
+
+  const clearForm = (e) => {
     
   }
   
@@ -157,6 +158,8 @@ const HomeComponent = (props) => {
                   <Grid item xs={12}>
                     <TextField id="outlined-basic" label="Name" name="name" value={state.name} onChange={handleChange} 
                     defaultValue="Name" variant="outlined" style={{ width: '50vw' }} />
+                    <span style={{marginTop:'4px', fontFamily:'arial', fontSize:'10px'}}>
+                    You can also indicate relationship here after your name in brackets. i.e Stella (Bisola's Friend or Oyin's mentor)</span>
                   </Grid>
                   <Grid item xs={12}>
                     <FormControlLabel
@@ -184,6 +187,7 @@ const HomeComponent = (props) => {
                     <Button
                       type="button"
                       variant="contained"
+                      onClick={clearForm}
                     >
                       Clear
                   </Button>
@@ -230,7 +234,7 @@ const HomeComponent = (props) => {
       <Grid item xs={0} sm={2}></Grid>
 
       <Grid item xs={12} sm={8}>
-      {/*<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />*/}
+      {<Feed userName="official_falolatomilola" className="Feed" classNameLoading="Loading" limit="16" />}
       </Grid>
 
       <Grid item xs={0} sm={2}></Grid>
