@@ -168,8 +168,8 @@ const MessagesComponent = (props) => {
     </div>
     */}
 
-      {props.messages.messages.total > 10 &&  
-      <Pagination style={{display: 'flex', alignContent: 'center' }}
+{props.messages.messages.total > 10 &&  
+      <Pagination style={{display: 'flex', alignContent: 'center',position:'relative',top:"-180px", left:'50px'}}
       className="pagination-restyle"
       current={props.messages.messages.current_page}
       defaultPageSize={10}

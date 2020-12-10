@@ -10,7 +10,7 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
 //Icons
 import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
 
-import { ListItem, Divider, ListItemText, Grid, ListItemAvatar, Avatar, Typography, Badge, makeStyles, IconButton } from '@material-ui/core';
+import { List, ListItem, Divider, ListItemText, Grid, ListItemAvatar, Avatar, Typography, Badge, makeStyles, IconButton } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +49,7 @@ function RenderMessage({ single, postLike }) {
     }else{
         return (
             <>
+            <List className={classes.root} style={{padding:'5px',paddingTop:'0px', paddingBottom:'0px'}}>
             <SwipeableList>
             <SwipeableListItem swipeRight={{
               content: <div style={{ backgroundColor: 'green', flex: 1, width: '100%', height: '100%', display: 'flex', justifyContent: 'center' }}><IconButton aria-label="settings" style={{ color: 'white' }}>
@@ -87,6 +88,7 @@ function RenderMessage({ single, postLike }) {
               </ListItem>
             </SwipeableListItem>
             </SwipeableList>
+            </List>
             <Divider/>
             <Divider/>
             
