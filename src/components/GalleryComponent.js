@@ -155,12 +155,7 @@ const GalleryComponent = () => {
         thumbnailWidth: 180,
         thumbnailHeight: 212
 },
-{
-        src: "images/gallery/25.jpg",
-        thumbnail: "images/gallery/25.jpg",
-        thumbnailWidth: 180,
-        thumbnailHeight: 212
-},
+
 {
         src: "images/gallery/26.jpg",
         thumbnail: "images/gallery/26.jpg",
@@ -169,7 +164,7 @@ const GalleryComponent = () => {
 },
 {
         src: "images/gallery/27.jpg",
-        thumbnail: "images/gallery/28.jpg",
+        thumbnail: "images/gallery/27.jpg",
         thumbnailWidth: 180,
         thumbnailHeight: 212
 },
@@ -180,8 +175,8 @@ const GalleryComponent = () => {
         thumbnailHeight: 212
 },
 {
-        src: "images/gallery/29.jpg",
-        thumbnail: "images/gallery/29.jpg",
+        src: "images/gallery/29.JPG",
+        thumbnail: "images/gallery/29.JPG",
         thumbnailWidth: 180,
         thumbnailHeight: 212
 },
